@@ -1,68 +1,50 @@
 import React from "react";
 import "./HighScoreTable.css";
+import { allCountryScores } from "./scores";
 
 const HighScoreTable = () => {
+  const data = allCountryScores;
+
   return (
     <div className="High-score-table">
-      <h2>Country:</h2>
-      <table>
-        <thead>
-          <tr>
-            <th>Name</th>
-            <th>Score</th>
-          </tr>
-        </thead>
-        {/* <tbody>{tableRowResults}</tbody> */}
-      </table>
+      {data?.map((country) => {
+        return (
+          <div>
+            <h2>{country.name}</h2>
+            {data?.country?.map((item) => (
+              <div>
+                <h3>{item}</h3>
+              </div>
+            ))}
+          </div>
+        );
+      })}
     </div>
   );
 };
 
-export default HighScoreTable;
-
-// const SearchResults = ({ results }) => {
-//   const tableRowResults = results.map((person) => {
-//     // curly brackets are a multi-line statement function
-//     // normal brackets return a single statement (one thing i.e the <tr>)
-//     // I can declare variables here!
-//     let checkInDate = moment(person.checkInDate);
-//     let checkOutDate = moment(person.checkOutDate);
-
-//     function test() {
-//       alert("You clicked me!");
-//       console.log(person.id);
-//     }
-//     return (
-//       <tr key={person.id}>
-//       <tr key={person.id} onClick={test}>
-//         <td>{person.id}</td>
-//         <td>{person.title}</td>
-//         <td>{person.firstName}</td>
-//         <td>{person.surname}</td>
-//         <td>{person.email}</td>
-//         <td>{person.roomId}</td>
-//         <td>{checkInDate.format("DD MMM YYYY")}</td>
-//         <td>{checkOutDate.format("DD MMM YYYY")}</td>
-//         <td>{checkOutDate.diff(checkInDate, "days")}</td>
-//       </tr>
-//     );
-//   });
 //   return (
-//     <table>
-//       <thead>
-//         <tr>
-//           <th>ID</th>
-//           <th>Title</th>
-//           <th>First Name</th>
-//           <th>Surname</th>
-//           <th>Email</th>
-//           <th>Room ID</th>
-//           <th>Check In Date</th>
-//           <th>Check Out Date</th>
-//           <th>Number of Nights</th>
-//         </tr>
-//       </thead>
-//       <tbody>{tableRowResults}</tbody>
-//     </table>
+//     <div className="High-score-table">
+//       {data?.map((country) => (
+//         <h2>{country.name}</h2>
+//       ))}
+//     </div>
 //   );
 // };
+
+export default HighScoreTable;
+
+// {
+//   data?.country.map((player) => (
+//     <div>
+//       <table>
+//         <tbody>
+//           <tr>
+//             <td>{player.score}</td>
+//             <td>9000</td>
+//           </tr>
+//         </tbody>
+//       </table>
+//     </div>
+//   ));
+// }

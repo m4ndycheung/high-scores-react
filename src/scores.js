@@ -1,4 +1,4 @@
-let allCountryScores = [
+export const allCountryScores = [
   {
     name: "Ethiopia",
     scores: [
