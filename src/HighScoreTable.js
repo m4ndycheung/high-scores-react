@@ -1,16 +1,20 @@
 import React from "react";
+// import allCountryScores from "./scores";
 
 const HighScoreTable = () => {
   return (
-    <table>
-      <thead>
-        <tr>
-          <th>Name</th>
-          <th>Score</th>
-        </tr>
-      </thead>
-      {/* <tbody>{tableRowResults}</tbody> */}
-    </table>
+    <div>
+      <h2>Country:</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Score</th>
+          </tr>
+        </thead>
+        {/* <tbody>{tableRowResults}</tbody> */}
+      </table>
+    </div>
   );
 };
 
