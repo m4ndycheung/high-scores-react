@@ -1,9 +1,9 @@
 import React from "react";
-// import allCountryScores from "./scores";
+import "./HighScoreTable.css";
 
 const HighScoreTable = () => {
   return (
-    <div>
+    <div className="High-score-table">
       <h2>Country:</h2>
       <table>
         <thead>
