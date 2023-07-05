@@ -1,13 +1,9 @@
 import "./App.css";
 import HighScoreTable from "./HighScoreTable";
-import { allCountryScores } from "./scores";
+import allCountryScores from "./scores";
 
-function App() {
-  return (
-    <div className="App">
-      <HighScoreTable />
-    </div>
-  );
-}
+const App = () => {
+  return <HighScoreTable countries={allCountryScores} />;
+};
 
 export default App;

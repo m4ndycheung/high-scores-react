@@ -1,21 +1,30 @@
 import React from "react";
 import "./HighScoreTable.css";
-import { allCountryScores } from "./scores";
 
-const HighScoreTable = () => {
-  const data = allCountryScores;
-
+const HighScoreTable = ({ countries }) => {
   return (
+    // a div wraps around everyone as a component can only return a single element
     <div className="High-score-table">
-      {data?.map((country) => {
+      {/* the first map accesses each country object in the array */}
+      {countries.map((country) => {
         return (
           <div>
-            <h2>{country.name}</h2>
-            {data?.country?.map((item) => (
-              <div>
-                <h3>{item}</h3>
-              </div>
-            ))}
+            <h2>High Scores: {country.name}</h2>
+            <table>
+              <thead>
+                <tr>
+                  <th>Player</th>
+                  <th>Score</th>
+                </tr>
+              </thead>
+              <tbody>
+                {country.scores.map((player, index) => (
+                  <tr key={index}>
+                    <td>{player.n}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
           </div>
         );
       })}
@@ -23,28 +32,4 @@ const HighScoreTable = () => {
   );
 };
 
-//   return (
-//     <div className="High-score-table">
-//       {data?.map((country) => (
-//         <h2>{country.name}</h2>
-//       ))}
-//     </div>
-//   );
-// };
-
 export default HighScoreTable;
-
-// {
-//   data?.country.map((player) => (
-//     <div>
-//       <table>
-//         <tbody>
-//           <tr>
-//             <td>{player.score}</td>
-//             <td>9000</td>
-//           </tr>
-//         </tbody>
-//       </table>
-//     </div>
-//   ));
-// }
