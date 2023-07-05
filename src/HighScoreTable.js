@@ -1,5 +1,6 @@
 import React from "react";
 import "./HighScoreTable.css";
+import PlayerNameAndScore from "./PlayerNameAndScore";
 
 const HighScoreTable = ({ countries }) => {
   return (
@@ -21,8 +22,7 @@ const HighScoreTable = ({ countries }) => {
                 {/* second map goes a level deeper to access the scores array */}
                 {country.scores.map((player, index) => (
                   <tr key={index}>
-                    <td>{player.n}</td>
-                    <td>{player.s}</td>
+                    <PlayerNameAndScore player={player.n} score={player.s} />
                   </tr>
                 ))}
               </tbody>
