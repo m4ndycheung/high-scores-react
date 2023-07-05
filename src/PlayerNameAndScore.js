@@ -1,7 +1,7 @@
 import React from "react";
 
-// I need to pass some props down to this child component
-// remmember n = name, s = score
+// I passed props in the parent component.
+// I named them player and score so I need to use the same names here.
 const PlayerNameAndScore = ({ player, score }) => {
   return (
     // <> is a react fragment used to group multiple elements without using <div>

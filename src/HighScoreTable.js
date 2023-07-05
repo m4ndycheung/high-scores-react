@@ -22,6 +22,7 @@ const HighScoreTable = ({ countries }) => {
                 {/* second map goes a level deeper to access the scores array */}
                 {country.scores.map((player, index) => (
                   <tr key={index}>
+                    {/* Passing down props to component */}
                     <PlayerNameAndScore player={player.n} score={player.s} />
                   </tr>
                 ))}
