@@ -18,9 +18,11 @@ const HighScoreTable = ({ countries }) => {
                 </tr>
               </thead>
               <tbody>
+                {/* second map goes a level deeper to access the scores array */}
                 {country.scores.map((player, index) => (
                   <tr key={index}>
                     <td>{player.n}</td>
+                    <td>{player.s}</td>
                   </tr>
                 ))}
               </tbody>
