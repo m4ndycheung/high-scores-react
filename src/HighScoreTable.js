@@ -9,7 +9,7 @@ const HighScoreTable = ({ countries }) => {
       {/* the first map accesses each country object in the array */}
       {countries.map((country) => {
         return (
-          <div>
+          <div className="country">
             <h2>High Scores: {country.name}</h2>
             <table>
               <thead>
