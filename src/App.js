@@ -6,10 +6,20 @@ import allCountryScores from "./scores";
 // after the arrow it will return.
 // if I add curly brackets, I need to write 'return'
 const App = () => {
-  let scoresSortedByCountryName = allCountryScores.sort((a, b) =>
+  let sortedByCountryName = allCountryScores.sort((a, b) =>
     a.name.localeCompare(b.name)
   );
-  return <HighScoreTable countries={scoresSortedByCountryName} />;
+
+  const sortedByCountryAndScores = sortedByCountryName.map((country) => {
+    // used the spread operator to make a copy of country.scores
+    // the og country.scores array remains unmodified during the sorting process.
+    const sortedScores = [...country.scores].sort((a, b) => b.s - a.s);
+    // used the spread operator to copy the country object
+    // we can now safely modify this object with the newly sortedScores
+    return { ...country, scores: sortedScores };
+  });
+
+  return <HighScoreTable countries={sortedByCountryAndScores} />;
 };
 
 export default App;
