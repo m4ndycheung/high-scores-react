@@ -6,10 +6,10 @@ import allCountryScores from "./scores";
 // after the arrow it will return.
 // if I add curly brackets, I need to write 'return'
 const App = () => {
-  let sortedCountryScores = allCountryScores.sort((a, b) =>
+  let scoresSortedByCountryName = allCountryScores.sort((a, b) =>
     a.name.localeCompare(b.name)
   );
-  return <HighScoreTable countries={sortedCountryScores} />;
+  return <HighScoreTable countries={scoresSortedByCountryName} />;
 };
 
 export default App;
